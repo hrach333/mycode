@@ -1,0 +1,22 @@
+server {
+        listen 80;
+        server_name memory-lane.loc www.memory-lane.loc;
+	index index.html index.htm;
+	root /var/www/html;
+        location / {
+		#proxy_set_eader   X-Forwarded-For $remote_addr;
+		#proxy_set_header   Host $http_host;
+		#proxy_pass         http://127.0.0.1:8080;
+		#proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		#proxy_set_header X-Forwarded-Proto $scheme;
+		#try_files $uri $uri/ =404;
+		try_files $uri $uri/ =404;		
+        }
+
+	
+
+	location ~ /\.ht {
+		deny all;
+	}
+
+}
